@@ -6,28 +6,21 @@ package main
 
 import "fmt"
 
-type Vertex struct {
-	Lat, Long float64
-}
 
-var m map[string]Vertex
+
 
 func main() {
-	m = make(map[string]Vertex)
-	m["Bell"] = Vertex{
-		40, -74,
-	}
-	fmt.Println(m["Bell"])
+	m := make(map[string]int)
+	m["A"] = 42
+	fmt.Println(m["A"])
 
-	var n = map[string]Vertex{
-		"Bell": Vertex{
-			10, 20,
-		},
-		"Google": Vertex{
-			20, 30,
-		},
-	}
+	m["B"] = 48
+	fmt.Println(m["B"])
 
-	fmt.Println(n)
+	delete(m,"A")
+	fmt.Println(m["A"])
+
+	v, ok := m["A"]
+	fmt.Println(v,ok)
 
 }
