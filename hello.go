@@ -8,11 +8,22 @@ import (
 	"fmt"
 )
 
-func main() {
-	p := []int{2, 3, 5, 7, 11, 13}
-	fmt.Println(p)
+func printSlice(s string, x []int) {
+	fmt.Printf("%s len=%d cap=%d %v\n",
+		s, len(x), cap(x), x)
+}
 
-	fmt.Println(p[1:4])
-	fmt.Println(p[:3])
-	fmt.Println(p[4:])
+func main() {
+	a := make([]int, 5)
+	printSlice("a", a)
+
+	b := make([]int, 0, 5)
+	printSlice("b", b)
+
+	c := b[:2]
+	printSlice("c", c)
+
+	d := c[2:5]
+	printSlice("d", d)
+
 }
