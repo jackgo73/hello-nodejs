@@ -4,23 +4,25 @@
 */
 package main
 
-import "fmt"
+import (
+	//"github.com/golang/tour/wc"
+	"fmt"
+)
 
-
-
+func fibonacci() func() int {
+	a := 0
+	b := 1
+	return func() int {
+		c := a + b
+		a = b
+		b = c
+		return c
+	}
+}
 
 func main() {
-	m := make(map[string]int)
-	m["A"] = 42
-	fmt.Println(m["A"])
-
-	m["B"] = 48
-	fmt.Println(m["B"])
-
-	delete(m,"A")
-	fmt.Println(m["A"])
-
-	v, ok := m["A"]
-	fmt.Println(v,ok)
-
+	f := fibonacci()
+	for i := 0; i < 10; i++ {
+		fmt.Println(f())
+	}
 }
