@@ -6,22 +6,17 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"net/http"
+	"time"
 )
 
-type Hello struct{}
-
-func (h Hello) ServeHTTP(
-	w http.ResponseWriter,
-	r *http.Request) {
-	fmt.Fprint(w, "Hello!")
+func say(s string) {
+	for i := 0; i < 5; i++ {
+		time.Sleep(100 * time.Millisecond)
+		fmt.Println(s)
+	}
 }
 
 func main() {
-	var h Hello
-	err := http.ListenAndServe("localhost:4010", h)
-	if err != nil {
-		log.Fatal(err)
-	}
+	go say("world")
+	say("hello")
 }
