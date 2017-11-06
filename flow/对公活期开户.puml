@@ -1,0 +1,8 @@
+@startuml
+
+start
+:ClickServlet.handleRequest();
+
+stop
+
+@enduml

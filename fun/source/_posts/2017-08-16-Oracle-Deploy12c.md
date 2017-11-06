@@ -440,3 +440,11 @@ grant ALTER USER to "JACKGO";
 
 
  strace sqlplus -L scott/tiger@orcl 2>&1| grep -i 'open.*tnsnames.ora'
+ 
+### 5.5图形化网络配置
+
+netmgr 或 netca
+
+netmgr功能更全面，切记配SID的时候listener中是区分大小写的！
+
+![](/images/2017-08-16-Oracle-Deploy12c-0.jpg) 
