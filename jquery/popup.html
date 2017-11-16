@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $.ajax({url:"demo_test.txt",
+                    success:function(result){
+                    $("#div1").html(result);
+                },
+                    error:function(err) {
+                        var html = '<div class="alert alert-danger" role="alert"><strong><i class="glyphicon glyphicon-warning-sign"></i>';
+                        html = html+'无法连接到服务器, <a target="ghelper" href="faq.html">点击这里查看问题</a>';
+                        html = html+'</div>';
+                        $("#div1").html(html);
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+<div id="popup">
+    <h4>
+        <img class="logo1" src="img/icon48.png"/> 谷歌上网助手
+    </h4>
+    <hr>
+    <div class="main">
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </div>
+</div>
+
+<button>获取其他内容</button>
+
+</body>
+</html>
+
+<!--https://chromehelper.net/api/popup-->
