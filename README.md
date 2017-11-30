@@ -1,1 +1,1 @@
-Part of my daily plan for studying Go.
+Part of my daily plan for studying js.
