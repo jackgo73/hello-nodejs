@@ -28,13 +28,26 @@
 <div id="drop">Drop a spreadsheet file here to see sheet data</div>
 <input type="file" name="xlfile" id="xlf"/> ... or click here to select a file
 </pre>
-
+<br/>
 <pre id="out">
 R E S U L T
 I S
 I N
 H E R E
 </pre>
+<br/>
+<script>
+    (function () {
+        var xlf = document.getElementById('xlf');
+        if (!xlf.addEventListener) return;
+
+        xlf.addEventListener('change', function (e) {
+            console.log(e);
+        });
+    })();
+
+</script>
+
 
 </body>
 </html>
