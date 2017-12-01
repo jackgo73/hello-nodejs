@@ -118,7 +118,7 @@ console.log('------------百融-----------\n');
 console.log(string_bairong);
 console.log('---------------------------');
 
-fs.writeFileSync('bairong.txt', string_bairong);
+// fs.writeFileSync('bairong.txt', string_bairong);
 
 
 /*
@@ -151,7 +151,7 @@ console.log('------------同盾-----------\n');
 console.log(string_tongdun);
 console.log('---------------------------');
 
-fs.writeFileSync('tongdun.txt', string_tongdun);
+// fs.writeFileSync('tongdun.txt', string_tongdun);
 
 
 /*
